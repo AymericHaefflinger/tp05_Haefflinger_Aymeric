@@ -1,0 +1,13 @@
+
+{
+    "/api": {
+      "target": "https://tp05-api.herokuapp.com/",
+      "secure": false,
+      "pathRewrite": {
+        "^/api": ""
+      },
+      "changeOrigin": true
+    }
+
+}
+  

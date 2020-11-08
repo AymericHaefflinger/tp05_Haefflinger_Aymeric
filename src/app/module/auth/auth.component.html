@@ -1,0 +1,27 @@
+<div>
+    <form [formGroup]="compteForm" (ngSubmit)="onSubmit()">
+
+        <p>Les identifiants nécessairent au test sont déja pré-remplis. Toute autre entrée sera comptée comme éronnée par notre API.</p>
+        <p> L'api est hébergé en ligne et peut mettre quelques secondes à se réveiller lors de la première utilisation</p>
+
+        <div class="form-group">
+            <label>
+                Adresse E-mail
+                <input type="email"  class="form-control" formControlName="mail"  placeholder="Entrez votre adresse e-mail" >
+            </label>
+            <div *ngIf="mail.invalid && mail.errors.notAnEmailAddress">
+            <p class="has-error">L'adresse mail entrée est invalide.</p>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label>
+                Mot de passe
+                <input type="password"  id="pass" formControlName="password"  class="form-control" >
+            </label>
+        </div>
+
+    
+        <button type="submit"  class="btn btn-primary" [disabled]="!compteForm.valid">Submit</button>
+    </form>
+  </div>
